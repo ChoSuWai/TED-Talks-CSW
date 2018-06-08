@@ -3,44 +3,57 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-<ImageView
-    android:id="@+id/picture"
-    android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:scaleType="centerCrop"
-    android:src="@drawable/ic_kenrobinson"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    />
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_kenrobinson" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_above="@id/text_brief"
         android:text="Ken Robinson"
-        android:textColor="#BDBDBD"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="16dp"
-        />
+        android:textColor="#BDBDBD" />
 
     <TextView
         android:id="@+id/text_brief"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/picture"
+        android:layout_alignLeft="@id/tv_name"
         android:text="Do schools kill creativity?"
         android:textColor="#FFFFFF"
-        android:layout_below="@id/tv_name"
-        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:textStyle="bold"
+        android:textSize="@dimen/margin_medium_2"
         />
 
-    <TextView
+    <ImageView
+        android:id="@+id/btn_white_vret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="19:24"
-        android:textColor="#BDBDBD"
-        android:layout_marginTop="220dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@id/tv_time"
+        android:layout_marginTop="190dp"
+        android:clickable="true"
+        android:foreground="@drawable/ripple"
+        android:padding="@dimen/margin_small"
+        android:src="@drawable/ic_more_vert_white_24dp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignRight="@id/picture"
-        />
+        android:layout_alignTop="@id/text_brief"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:text="19:24"
+        android:textColor="#BDBDBD" />
 
 
 </RelativeLayout>

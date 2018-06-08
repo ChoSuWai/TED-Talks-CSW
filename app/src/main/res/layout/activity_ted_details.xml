@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ted_details_appbar_height"
+            app:contentScrim="@color/primary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/ted_details_backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_ingrid"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/btn_back_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:clickable="true"
+                        android:foreground="@drawable/ripple"
+                        android:padding="@dimen/margin_medium"
+                        android:src="@drawable/ic_arrow_back_white_24dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/btn_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:clickable="true"
+                        android:foreground="@drawable/ripple"
+                        android:padding="@dimen/margin_medium"
+                        android:src="@drawable/ic_more_vert_white_24dp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_speaker_name"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Ingrid Fetell Lee"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/margin_medium_2"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_text_brief"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_speaker_name"
+                android:text="Where joy hides and how to find it"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/margin_large"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_date_listen"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_text_brief"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_posted_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="13:38      |"
+                    android:textColor="@color/divider"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btn_Listen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_volume_up_grey_light_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_listen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:text="Listen"
+                    android:textColor="@color/divider"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_buttons"
+                style="@style/ted_details_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_date_listen"
+                android:layout_marginTop="@dimen/margin_small"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_item_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_playlist_add_grey_light_24dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_favorite_border_grey_24dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_download"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_file_download_grey_24dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_share_grey_24dp" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_text_details"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_buttons"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:lineSpacingMultiplier="1.2"
+                android:text="Cherry blossoms and rainbows, bubbles and googly eyes: Why do some things seem to create such universal joy? In this captivating talk, Ingrid Fetell Lee reveals the surprisingly tangible roots of joy and shows how we all can find -- and create -- more of it in the world around us."
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_posted_date"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_text_details"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="TED2018, Filmed Apr 2018"
+                android:textColor="@color/divider"
+                android:textSize="@dimen/margin_medium_3"
+                android:textStyle="italic|bold" />
+
+            <View
+                android:id="@+id/hr_line1"
+                android:layout_below="@id/tv_posted_date"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/tv_speaker_title"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hr_line1"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:text="About the speaker"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/margin_large"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                style="@style/ted_details_style"
+                android:layout_width="@dimen/profile_width"
+                android:layout_height="@dimen/profile_height"
+                android:layout_below="@id/tv_speaker_title"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:src="@drawable/ic_ingridlee" />
+
+            <TextView
+                android:id="@+id/tv_bold_speaker_name"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_profile"
+                android:layout_below="@id/tv_speaker_title"
+                android:layout_toRightOf="@id/iv_profile"
+                android:text="Ingrid Fetell Lee"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_about_speaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_bold_speaker_name"
+                android:layout_below="@id/tv_bold_speaker_name"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Designer, writer"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular" />
+
+            <TextView
+                android:id="@+id/tv_speaker_bio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_bold_speaker_name"
+                android:layout_below="@id/tv_about_speaker"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:lineSpacingMultiplier="1.2"
+                android:text="Ingrid Fetell Lee studies joy and reveals how we can find more of it in the world around us."
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/hr_line2"
+                android:layout_below="@id/tv_speaker_bio"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/tv_suggestion"
+                style="@style/ted_details_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hr_line2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:text="Watch next"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/btn_video1"
+                style="@style/ted_details_style"
+                android:layout_width="@dimen/video_width"
+                android:layout_height="@dimen/video_height"
+                android:layout_below="@id/tv_suggestion"
+                android:layout_marginTop="@dimen/margin_medium_2">
+
+                <ImageView
+                    android:id="@+id/iv_video1"
+                    android:layout_width="@dimen/video_width"
+                    android:layout_height="@dimen/video_height"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_richard" />
+
+                <TextView
+                    style="@style/text_in_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17:15" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_video_speaker_name1"
+                style="@style/video_speaker_name_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btn_video1"
+                android:layout_below="@id/tv_suggestion"
+                android:layout_toRightOf="@id/btn_video1"
+                android:text="Richard Seymour" />
+
+            <TextView
+                android:id="@+id/tv_video_title1"
+                style="@style/video_title_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_video_speaker_name1"
+                android:layout_below="@id/tv_video_speaker_name1"
+                android:text="How beauty feels" />
+
+            <ImageView
+                android:id="@+id/btn_video_setting1"
+                style="@style/ic_video_setting_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_video_speaker_name1"
+                android:layout_below="@id/tv_suggestion"
+                android:src="@drawable/ic_more_vert_grey_24dp" />
+
+            <FrameLayout
+                android:id="@+id/btn_video2"
+                style="@style/ted_details_style"
+                android:layout_width="@dimen/video_width"
+                android:layout_height="@dimen/video_height"
+                android:layout_below="@id/btn_video1"
+                android:layout_marginTop="@dimen/margin_medium_2">
+
+                <ImageView
+                    android:id="@+id/iv_video2"
+                    android:layout_width="@dimen/video_width"
+                    android:layout_height="@dimen/video_height"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_anjan" />
+
+                <TextView
+                    style="@style/text_in_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14:47" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_video_speaker_name2"
+                style="@style/video_speaker_name_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btn_video2"
+                android:layout_below="@id/btn_video1"
+                android:layout_toRightOf="@id/btn_video1"
+                android:text="Anjan Chatterjee" />
+
+            <TextView
+                android:id="@+id/tv_video_title2"
+                style="@style/video_title_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_video_speaker_name2"
+                android:layout_below="@id/tv_video_speaker_name2"
+                android:text="How your brain decides what is beautiful" />
+
+            <ImageView
+                android:id="@+id/btn_video_setting2"
+                style="@style/ic_video_setting_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_video_speaker_name2"
+                android:layout_below="@id/btn_video1"
+                android:src="@drawable/ic_more_vert_grey_24dp" />
+
+            <FrameLayout
+                android:id="@+id/btn_video3"
+                style="@style/ted_details_style"
+                android:layout_width="@dimen/video_width"
+                android:layout_height="@dimen/video_height"
+                android:layout_below="@id/btn_video2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+                <ImageView
+                    android:id="@+id/iv_video3"
+                    android:layout_width="@dimen/video_width"
+                    android:layout_height="@dimen/video_height"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_emily" />
+
+                <TextView
+                    style="@style/text_in_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:18" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_video_speaker_name3"
+                style="@style/video_speaker_name_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btn_video3"
+                android:layout_below="@id/btn_video2"
+                android:layout_toRightOf="@id/btn_video3"
+                android:text="Emily Esfahani Smith" />
+
+            <TextView
+                android:id="@+id/tv_video_title3"
+                style="@style/video_title_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_video_speaker_name3"
+                android:layout_below="@id/tv_video_speaker_name3"
+                android:text="There's more to life than being happy" />
+
+            <ImageView
+                android:id="@+id/btn_video_setting3"
+                style="@style/ic_video_setting_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_video_speaker_name3"
+                android:layout_below="@id/btn_video2"
+                android:src="@drawable/ic_more_vert_grey_24dp"
+                />
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:src="@drawable/ic_play_arrow_white_24dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="right|bottom" />
+
+</android.support.design.widget.CoordinatorLayout>

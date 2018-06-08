@@ -7,10 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chosuwai.ted.talks.csw.R;
+import com.chosuwai.ted.talks.csw.delegates.TEDDelegate;
 import com.chosuwai.ted.talks.csw.viewholders.TEDTalksViewHolder;
 
 public class TEDTalksAdapter extends RecyclerView.Adapter {
-    //private android.R.attr R;
+    private TEDDelegate mTEDDelegate;
+
+    public TEDTalksAdapter(TEDDelegate tedDelegate){mTEDDelegate=tedDelegate;}
 
     @NonNull
     @Override
@@ -18,7 +21,7 @@ public class TEDTalksAdapter extends RecyclerView.Adapter {
         LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
 
         View view=layoutInflater.inflate(R.layout.view_holder_ted_talks, parent, false);
-                return new TEDTalksViewHolder(view);
+                return new TEDTalksViewHolder(view,mTEDDelegate);
 
     }
 

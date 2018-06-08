@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,5 +16,45 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="icons_behavior">
+        <item name="android:padding">@dimen/margin_small</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ted_details_style">
+        <item name="android:layout_marginStart">@dimen/margin_medium_2</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium_2</item>
+    </style>
+
+    <style name="text_in_video">
+        <item name="android:layout_gravity">right|bottom</item>
+        <item name="android:layout_marginBottom">@dimen/margin_small</item>
+        <item name="android:layout_marginEnd">@dimen/margin_small</item>
+        <item name="android:background">@color/bg_time_color</item>
+        <item name="android:padding">@dimen/margin_small</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+    </style>
+
+    <style name="video_speaker_name_text_style">
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="video_title_text_style">
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ic_video_setting_style">
+        <item name="android:foreground">@drawable/ripple</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/margin_small</item>
+    </style>
 
 </resources>
