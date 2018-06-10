@@ -235,7 +235,8 @@
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray"
+                style="@style/ted_details_style"/>
 
             <TextView
                 android:id="@+id/tv_speaker_title"
@@ -301,7 +302,9 @@
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/darker_gray"
+                style="@style/ted_details_style"
+                />
 
             <TextView
                 android:id="@+id/tv_suggestion"
@@ -315,160 +318,15 @@
                 android:textSize="@dimen/text_heading_1x"
                 android:textStyle="bold" />
 
-            <FrameLayout
-                android:id="@+id/btn_video1"
-                style="@style/ted_details_style"
-                android:layout_width="@dimen/video_width"
-                android:layout_height="@dimen/video_height"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_ted_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tv_suggestion"
-                android:layout_marginTop="@dimen/margin_medium_2">
+                android:layout_marginTop="@dimen/margin_medium_3"
+                >
 
-                <ImageView
-                    android:id="@+id/iv_video1"
-                    android:layout_width="@dimen/video_width"
-                    android:layout_height="@dimen/video_height"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_richard" />
-
-                <TextView
-                    style="@style/text_in_video"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="17:15" />
-
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/tv_video_speaker_name1"
-                style="@style/video_speaker_name_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/btn_video1"
-                android:layout_below="@id/tv_suggestion"
-                android:layout_toRightOf="@id/btn_video1"
-                android:text="Richard Seymour" />
-
-            <TextView
-                android:id="@+id/tv_video_title1"
-                style="@style/video_title_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_video_speaker_name1"
-                android:layout_below="@id/tv_video_speaker_name1"
-                android:text="How beauty feels" />
-
-            <ImageView
-                android:id="@+id/btn_video_setting1"
-                style="@style/ic_video_setting_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/tv_video_speaker_name1"
-                android:layout_below="@id/tv_suggestion"
-                android:src="@drawable/ic_more_vert_grey_24dp" />
-
-            <FrameLayout
-                android:id="@+id/btn_video2"
-                style="@style/ted_details_style"
-                android:layout_width="@dimen/video_width"
-                android:layout_height="@dimen/video_height"
-                android:layout_below="@id/btn_video1"
-                android:layout_marginTop="@dimen/margin_medium_2">
-
-                <ImageView
-                    android:id="@+id/iv_video2"
-                    android:layout_width="@dimen/video_width"
-                    android:layout_height="@dimen/video_height"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_anjan" />
-
-                <TextView
-                    style="@style/text_in_video"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14:47" />
-
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/tv_video_speaker_name2"
-                style="@style/video_speaker_name_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/btn_video2"
-                android:layout_below="@id/btn_video1"
-                android:layout_toRightOf="@id/btn_video1"
-                android:text="Anjan Chatterjee" />
-
-            <TextView
-                android:id="@+id/tv_video_title2"
-                style="@style/video_title_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_video_speaker_name2"
-                android:layout_below="@id/tv_video_speaker_name2"
-                android:text="How your brain decides what is beautiful" />
-
-            <ImageView
-                android:id="@+id/btn_video_setting2"
-                style="@style/ic_video_setting_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/tv_video_speaker_name2"
-                android:layout_below="@id/btn_video1"
-                android:src="@drawable/ic_more_vert_grey_24dp" />
-
-            <FrameLayout
-                android:id="@+id/btn_video3"
-                style="@style/ted_details_style"
-                android:layout_width="@dimen/video_width"
-                android:layout_height="@dimen/video_height"
-                android:layout_below="@id/btn_video2"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_marginBottom="@dimen/margin_medium">
-
-                <ImageView
-                    android:id="@+id/iv_video3"
-                    android:layout_width="@dimen/video_width"
-                    android:layout_height="@dimen/video_height"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_emily" />
-
-                <TextView
-                    style="@style/text_in_video"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12:18" />
-
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/tv_video_speaker_name3"
-                style="@style/video_speaker_name_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/btn_video3"
-                android:layout_below="@id/btn_video2"
-                android:layout_toRightOf="@id/btn_video3"
-                android:text="Emily Esfahani Smith" />
-
-            <TextView
-                android:id="@+id/tv_video_title3"
-                style="@style/video_title_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_video_speaker_name3"
-                android:layout_below="@id/tv_video_speaker_name3"
-                android:text="There's more to life than being happy" />
-
-            <ImageView
-                android:id="@+id/btn_video_setting3"
-                style="@style/ic_video_setting_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/tv_video_speaker_name3"
-                android:layout_below="@id/btn_video2"
-                android:src="@drawable/ic_more_vert_grey_24dp"
-                />
+            </android.support.v7.widget.RecyclerView>
 
         </RelativeLayout>
 
