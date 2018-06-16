@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.chosuwai.ted.talks.csw.R;
 import com.chosuwai.ted.talks.csw.adapters.TEDTalksAdapter;
+import com.chosuwai.ted.talks.csw.data.models.TEDModel;
 import com.chosuwai.ted.talks.csw.delegates.TEDDelegate;
 
 public class MainActivity extends BaseActivity
@@ -32,6 +33,8 @@ public class MainActivity extends BaseActivity
         rvted.setAdapter(tedTalksAdapter);
         rvted.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
+
+        TEDModel.getObjInstance().loadPlayList();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
