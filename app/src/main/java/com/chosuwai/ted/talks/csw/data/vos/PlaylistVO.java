@@ -1,25 +1,37 @@
 package com.chosuwai.ted.talks.csw.data.vos;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class PlaylistVO {
 
+    @SerializedName("playlist_id")
     private String playlistId;
+
+    @SerializedName("title")
     private String playlistTitle;
+
+    @SerializedName("imageUrl")
     private String playlistImage;
+
+    @SerializedName("totalTalks")
     private String totalTalks;
+
+    @SerializedName("description")
     private String playlistDescription;
+
+    @SerializedName("talksInPlaylist")
     private List<TalkVO> talksInPlaylist;
 
     public String getPlaylistId() {
         return playlistId;
     }
 
-    public String getPlaylistTitle() {
+    public String getTitle() {
         return playlistTitle;
     }
 
-    public String getPlaylistImage() {
+    public String getImageUrl() {
         return playlistImage;
     }
 
@@ -27,7 +39,7 @@ public class PlaylistVO {
         return totalTalks;
     }
 
-    public String getPlaylistDescription() {
+    public String getDescription() {
         return playlistDescription;
     }
 

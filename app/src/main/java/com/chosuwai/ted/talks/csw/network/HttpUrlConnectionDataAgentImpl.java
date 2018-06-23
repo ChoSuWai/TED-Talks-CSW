@@ -4,10 +4,15 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.chosuwai.ted.talks.csw.data.models.TEDModel;
+import com.chosuwai.ted.talks.csw.events.ApiErrorEvent;
+import com.chosuwai.ted.talks.csw.events.SuccessGetTEDTalksEvent;
+import com.chosuwai.ted.talks.csw.network.responses.GetTEDTalksResponses;
 import com.chosuwai.ted.talks.csw.utils.TEDConstants;
+import com.google.gson.Gson;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,7 +42,7 @@ public class HttpUrlConnectionDataAgentImpl implements TEDDataAgent {
     }
 
     @Override
-    public void loadPlayList(int page, final String accessToken) {
+    public void loadPlayList(final int page, final String accessToken) {
 
 
 
@@ -71,6 +76,7 @@ public class HttpUrlConnectionDataAgentImpl implements TEDDataAgent {
 
                     params.add(new BasicNameValuePair(TEDConstants.PARAM_ACCESS_TOKEN,
                             accessToken));
+                    params.add(new BasicNameValuePair(TEDConstants.PARAM_PAGE, String.valueOf(page)));
 
                     //write the parameters from NameValuePair list into connection obj.
                     OutputStream outputStream=connection.getOutputStream();
@@ -116,8 +122,19 @@ public class HttpUrlConnectionDataAgentImpl implements TEDDataAgent {
             }
 
             @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
+            protected void onPostExecute(String responseString) {
+                super.onPostExecute(responseString);
+                Gson gson=new Gson();
+                GetTEDTalksResponses tedResponse=gson.fromJson(responseString, GetTEDTalksResponses.class);
+                Log.d("onPostExecute", "TED Talks size : "+tedResponse.getTedTalks().size());
+
+                if(tedResponse.isResponseOk()){
+                    SuccessGetTEDTalksEvent event=new SuccessGetTEDTalksEvent(tedResponse.getTedTalks());
+                    EventBus.getDefault().post(event);
+                }else{
+                    ApiErrorEvent event=new ApiErrorEvent(tedResponse.getMessage());
+                    EventBus.getDefault().post(event);
+                }
             }
         }.execute();
 
